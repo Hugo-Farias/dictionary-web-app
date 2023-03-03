@@ -42,9 +42,8 @@ const FontSelector = function () {
         style={{ fontFamily: selectedOption.cssValue }}
       >
         {selectedOption.name}
-        <img src={arrowDown} alt="" />
+        <img src={arrowDown} alt="Dropdown menu arrow" />
       </span>
-
       <ul className={isHidden ? "hide" : ""}>{ListRender}</ul>
     </div>
   );

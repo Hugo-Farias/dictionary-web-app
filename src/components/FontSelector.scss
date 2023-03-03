@@ -38,14 +38,14 @@
     position: absolute;
     font-size: 1.8rem;
     line-height: 2.4rem;
-    transition: all 0.2s;
+    transition: all 0.1s;
     @include flex-center;
     flex-direction: column;
+    gap: 1.6rem;
     align-items: flex-start;
-    gap: 1rem;
     padding: 2rem;
     list-style: none;
-    min-width: 12.3rem;
+    min-width: 14.3rem;
     height: auto;
     top: 5rem;
     border-radius: 1.6rem;
@@ -55,6 +55,7 @@
     z-index: -1;
 
     & > li {
+      width: 100%;
       cursor: pointer;
 
       &:hover {

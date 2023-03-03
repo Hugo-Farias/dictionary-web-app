@@ -8,7 +8,7 @@ const Navbar = function () {
     <div className="navbar">
       <img src={logo} alt="Dictionary logo" />
       <FontSelector />
-      <Separator />
+      <Separator isHorizontal={false} size={"3.2rem"} />
     </div>
   );
 };
