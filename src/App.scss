@@ -1,0 +1,39 @@
+$color-back: rgba(0, 0, 0, 0.95);
+$font-color: #fff;
+$window-color: #1f1f1f;
+$primary-color: #a445ed;
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  $font-name: Lora;
+  font-family: $font-name;
+  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+}
+@font-face {
+  $font-name: Inter;
+  font-family: $font-name;
+  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+}
+@font-face {
+  $font-name: Inconsolata;
+  font-family: $font-name;
+  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+}
+
+body {
+  background-color: $color-back;
+  color: $font-color;
+}
+
+.app {
+  margin: 3rem auto;
+  max-width: 73.6rem;
+  font-size: 3rem;
+  font-family: myFont, sans-serif;
+}
