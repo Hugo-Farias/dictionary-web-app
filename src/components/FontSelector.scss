@@ -11,10 +11,7 @@
 }
 
 .font-selector {
-  @include flex-center;
   font-weight: 700;
-  border-radius: 3rem;
-  padding-left: 30rem;
   margin-left: auto;
 
   & .font-current {

@@ -16,7 +16,7 @@ const fonts = [
 
 const FontSelector = function () {
   const [selectedOption, setSelectedOption] = useState<fontObj>(fonts[0]);
-  const [isHidden, setIsHidden] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(true);
 
   const handleToggleClick = () => {
     setIsHidden(!isHidden);
