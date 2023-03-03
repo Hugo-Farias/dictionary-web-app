@@ -23,13 +23,18 @@ const FontSelector = function () {
   };
 
   const handleOptionClick = (option: fontObj) => {
+    if (option.id === selectedOption.id) return;
     setSelectedOption(option);
     setIsHidden(true);
   };
 
   const ListRender = fonts.map((value) => {
     return (
-      <li key={value.id} onClick={() => handleOptionClick(value)}>
+      <li
+        key={value.id}
+        className={value.id === selectedOption.id ? "active" : ""}
+        onClick={() => handleOptionClick(value)}
+      >
         <span style={{ fontFamily: value.cssValue }}>{value.name}</span>
       </li>
     );
@@ -37,14 +42,16 @@ const FontSelector = function () {
 
   return (
     <div className="font-selector">
-      <span
-        onClick={handleToggleClick}
-        style={{ fontFamily: selectedOption.cssValue }}
-      >
-        {selectedOption.name}
-        <img src={arrowDown} alt="Dropdown menu arrow" />
-      </span>
-      <ul className={isHidden ? "hide" : ""}>{ListRender}</ul>
+      <div className="font-current">
+        <span
+          onClick={handleToggleClick}
+          style={{ fontFamily: selectedOption.cssValue }}
+        >
+          {selectedOption.name}
+          <img src={arrowDown} alt="Dropdown menu arrow" />
+        </span>
+        <ul className={isHidden ? "hide" : ""}>{ListRender}</ul>
+      </div>
     </div>
   );
 };
