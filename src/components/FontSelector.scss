@@ -11,13 +11,15 @@
 }
 
 .font-selector {
-  @include flex-column-center;
-  position: relative;
+  @include flex-center;
+  font-weight: 700;
   border-radius: 3rem;
   margin-left: auto;
 
-  & > button {
+  & > span {
+    position: relative;
     @include button-style;
+    @include flex-center;
     font-size: 1.8rem;
     cursor: pointer;
 
@@ -26,31 +28,31 @@
     }
 
     & > img {
-      width: 1.2rem;
+      width: 1.6rem;
       height: 0.6rem;
       margin-left: 1rem;
     }
   }
 
   & > ul {
+    position: absolute;
     font-size: 1.8rem;
     line-height: 2.4rem;
     transition: all 0.2s;
-    align-self: flex-end;
-    @include flex-column-center;
+    @include flex-center;
+    flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
     padding: 2rem;
-    position: absolute;
     list-style: none;
     min-width: 12.3rem;
     height: auto;
-    top: 2rem;
-    backdrop-filter: blur(3rem);
+    top: 5rem;
     border-radius: 1.6rem;
-    background-color: rgba($window-color, 80%);
+    backdrop-filter: blur(1rem);
+    background-color: rgba($window-color, 60%);
     box-shadow: 0 0.5rem 3rem $primary-color;
-    z-index: -10;
+    z-index: -1;
 
     & > li {
       cursor: pointer;

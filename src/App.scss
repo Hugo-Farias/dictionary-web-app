@@ -3,9 +3,8 @@ $font-color: #fff;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
 
-@mixin flex-column-center {
+@mixin flex-center {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

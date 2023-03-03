@@ -37,13 +37,13 @@ const FontSelector = function () {
 
   return (
     <div className="font-selector">
-      <button
+      <span
         onClick={handleToggleClick}
         style={{ fontFamily: selectedOption.cssValue }}
       >
         {selectedOption.name}
         <img src={arrowDown} alt="" />
-      </button>
+      </span>
 
       <ul className={isHidden ? "hide" : ""}>{ListRender}</ul>
     </div>

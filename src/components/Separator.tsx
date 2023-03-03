@@ -1,5 +1,7 @@
+import "./Separator.scss";
+
 const Separator = function () {
-  return $END$
-}
-    
-export default Separator
+  return <div className="separator" />;
+};
+
+export default Separator;

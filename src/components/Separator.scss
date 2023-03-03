@@ -1,0 +1,10 @@
+@import "../App";
+
+.separator {
+  background-color: rgba($font-color, 60%);
+  content: "";
+  display: inline-block;
+  height: 3.2rem;
+  width: 0.1rem;
+  margin: 0 2.6rem;
+}
