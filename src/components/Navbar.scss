@@ -1,11 +1,12 @@
+@import "../App";
+
 .navbar {
   //background-color: rgba(164, 69, 237, 0.12);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  gap: 2rem;
   max-width: 73.7rem;
   max-height: 3.6rem;
-  margin: 1rem;
+  margin: 1rem 0;
 
   & img {
     width: 3.2rem;

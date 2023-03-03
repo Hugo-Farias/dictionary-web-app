@@ -1,7 +1,8 @@
 $color-back: rgba(0, 0, 0, 0.95);
-$font-color: #fff;
+$font-color: #efefef;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
+$light-back-color: #757575;
 
 @mixin flex-center {
   display: flex;
@@ -25,14 +26,25 @@ $primary-color: #a445ed;
   src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $color-back;
   color: $font-color;
+}
+
+body.light {
+  color: black;
+  background-color: white;
 }
 
 .app {
   margin: 3rem auto;
   max-width: 73.6rem;
   font-size: 3rem;
-  font-family: myFont, sans-serif;
+  font-family: Inter, sans-serif;
 }

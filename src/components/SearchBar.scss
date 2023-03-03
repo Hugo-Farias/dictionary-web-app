@@ -1,0 +1,44 @@
+@import "../App";
+
+.search-container {
+  position: relative;
+  margin: 5rem auto;
+  & .search-bar {
+    margin-bottom: 0.8rem;
+    padding: 3rem;
+    width: 100%;
+    height: 6.4rem;
+    border-radius: 1.6rem;
+    border: none;
+    background-color: darken($window-color, 4%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: $font-color;
+
+    &:focus {
+      background-color: $window-color;
+      outline: none;
+      //outline: 1px solid $primary-color;
+    }
+    &.invalid {
+      outline: 1px solid #ff5252;
+    }
+  }
+
+  & img {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-70%);
+    background-size: 2rem 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  & p {
+    position: absolute;
+    color: #ff5252;
+    margin: 0;
+    font-size: 2rem;
+  }
+}

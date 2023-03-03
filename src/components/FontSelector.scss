@@ -42,13 +42,14 @@
       @include flex-center;
       flex-direction: column;
       gap: 1.6rem;
-      padding: 2rem;
+      padding: 2.4rem 6.9rem 2.4rem 2.4rem;
       list-style: none;
       min-width: 14.3rem;
-      top: 5rem;
+      top: 12%;
       border-radius: 1.6rem;
       backdrop-filter: blur(0.5rem);
       background-color: rgba($window-color, 80%);
+      z-index: 10;
 
       &:not(.hide) {
         box-shadow: 0 0.5rem 3rem $primary-color;
@@ -64,6 +65,7 @@
       }
       & .active {
         color: $primary-color;
+        cursor: default;
       }
     }
   }

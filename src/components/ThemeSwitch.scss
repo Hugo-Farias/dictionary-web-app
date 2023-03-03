@@ -1,0 +1,42 @@
+@import "../App";
+
+$height: 2rem;
+
+.theme-container {
+  @include flex-center;
+  gap: 1rem;
+  & .theme-switch {
+    cursor: pointer;
+    @include flex-center;
+    background-color: $primary-color;
+    height: 2rem;
+    width: 4rem;
+    border-radius: $height / 2;
+
+    &.off {
+      background-color: $light-back-color;
+      color: white;
+    }
+
+    & > .lever {
+      transition: transform 0.3s;
+      background-color: #fff;
+      height: $height * 0.8;
+      width: $height * 0.8;
+      border-radius: 50%;
+      transform: translateX(60%);
+    }
+
+    &.off > .lever {
+      transform: translateX(-60%);
+    }
+  }
+  & img {
+    height: 2rem;
+    filter: saturate(100%);
+  }
+
+  & .off + img {
+    filter: brightness(0%);
+  }
+}
