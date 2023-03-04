@@ -17,11 +17,11 @@ interface propsT {
 }
 
 const TitleSection: React.FC<propsT> = function (props) {
-  const { word, phonetic, phonetics: phoneticsArr } = props;
+  const { word, phonetic, phonetics } = props;
 
-  const audio: HTMLAudioElement | void = new Audio(
-    phoneticsArr.find((v) => v?.audio)?.audio
-  );
+  const phoneticsData = phonetics.find((v) => Object.keys(v).length > 2);
+
+  const audio: HTMLAudioElement | void = new Audio(phoneticsData?.audio);
 
   const handlePlayButton = function () {
     if (!audio) return;
@@ -32,9 +32,7 @@ const TitleSection: React.FC<propsT> = function (props) {
     <div className="title-container">
       <div className="title-pronounciation-container">
         <h1 className="title">{word}</h1>
-        <a href="" target="_blank" className="pronounciation">
-          {phonetic}
-        </a>
+        <span className="pronounciation">{phonetic}</span>
       </div>
       <a>
         <img

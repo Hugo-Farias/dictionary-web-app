@@ -27,3 +27,17 @@ export interface DictionaryData {
   };
   sourceUrls: string[];
 }
+
+export interface meaningsT {
+  meanings: {
+    partOfSpeech: string;
+    definitions: {
+      definition: string;
+      synonyms: string[];
+      antonyms: string[];
+      example?: string;
+    }[];
+    synonyms: string[];
+    antonyms: string[];
+  };
+}

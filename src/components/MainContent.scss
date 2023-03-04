@@ -2,35 +2,8 @@
 
 .main-content {
   margin-bottom: 10rem;
-  & & .type-separator-container {
-    @include flex-center;
-  }
-
-  & .noun-container {
-    & .synonyms {
-      margin-top: 6.4rem;
-      @include flex-center;
-      justify-content: flex-start;
-      gap: 2.2rem;
-
-      & h4 {
-        margin-bottom: 0;
-      }
-
-      & ul {
-        color: $primary-color;
-        list-style: none;
-        font-weight: 700;
-        font-size: 2rem;
-        line-height: 2.4rem;
-        @include flex-center;
-        gap: 2rem;
-      }
-    }
-  }
 
   & .source-container {
-    //font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     @include flex-center;
@@ -41,28 +14,7 @@
     }
   }
 
-  & .content {
-    & ul {
-      padding-inline: 4.7rem;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
-
-      & li {
-        margin-bottom: 1.3rem;
-
-        & p {
-          margin-bottom: 1.3rem;
-        }
-      }
-    }
-
-    & .example {
-      color: $light-back-color;
-    }
-  }
-
-  & h1 {
+  & & h1 {
     font-size: 6.4rem;
     margin-bottom: 0.8rem;
   }
@@ -84,14 +36,6 @@
 
   h5 {
     color: $light-back-color;
-  }
-
-  & li {
-    &::marker {
-      color: $primary-color;
-      font-size: 2rem;
-      margin-right: 2rem;
-    }
   }
 
   & a {

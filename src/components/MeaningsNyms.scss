@@ -1,0 +1,26 @@
+@import "../App";
+
+.nyms {
+  @include flex-center;
+  margin-top: 6.4rem;
+  justify-content: flex-start;
+  height: 3rem;
+  gap: 1rem;
+
+  & ul {
+    @include flex-center;
+    list-style: none;
+    gap: 2rem;
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 2rem;
+
+    & li {
+      margin: 0;
+    }
+  }
+
+  & h4 {
+    margin-bottom: 0;
+  }
+}
