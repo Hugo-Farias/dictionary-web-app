@@ -3,13 +3,17 @@ import { meaningsT } from "../helpers/typeDefinitions";
 import Separator from "./Separator";
 import React from "react";
 import MeaningsNyms from "./MeaningsNyms";
+import MeaningsExample from "./MeaningsExample";
 
 const Meanings: React.FC<meaningsT> = function ({ meanings }) {
   const { partOfSpeech, definitions, synonyms, antonyms } = meanings;
 
-  const definitionJSX = definitions.map((v) => <li>{v.definition}</li>);
-
-  console.log(antonyms.length > 0);
+  const definitionJSX = definitions.map((v, i) => (
+    <li key={i}>
+      {v.definition}
+      {<MeaningsExample example={v.example} />}
+    </li>
+  ));
 
   return (
     <div className="meanings">

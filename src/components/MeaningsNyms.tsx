@@ -9,8 +9,8 @@ type propsT = {
 const MeaningsNyms = function ({ name, list }: propsT) {
   if (list.length < 1) return null;
 
-  const JSX = list.map((v) => (
-    <li>
+  const JSX = list.map((v, i) => (
+    <li key={i}>
       <a>{v}</a>
     </li>
   ));

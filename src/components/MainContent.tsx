@@ -4,7 +4,15 @@ import React from "react";
 import TitleSection from "./TitleSection";
 import Meanings from "./Meanings";
 
-const MainContent: React.FC<{ data: DictionaryData }> = function ({ data }) {
+type propsT = {
+  data: DictionaryData;
+};
+
+const MainContent: React.FC<propsT> = function ({ data }) {
+  const meaningsJSX = data.meanings.map((value, i) => (
+    <Meanings key={i} meanings={value} />
+  ));
+
   return (
     <div className="main-content">
       <TitleSection
@@ -12,7 +20,7 @@ const MainContent: React.FC<{ data: DictionaryData }> = function ({ data }) {
         phonetic={data.phonetic}
         phonetics={data.phonetics}
       />
-      <Meanings meanings={data.meanings[0]} />
+      {meaningsJSX}
     </div>
   );
 };
