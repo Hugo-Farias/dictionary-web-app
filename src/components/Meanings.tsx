@@ -4,7 +4,7 @@ import React from "react";
 
 const Meanings = function () {
   return (
-    <>
+    <div className="content">
       <div className="noun-container">
         <div className="type-separator-container">
           <h3 className="type">noun</h3>
@@ -52,8 +52,17 @@ const Meanings = function () {
             </li>
           </ul>
         </div>
+        <h4 className="meaning">Meaning</h4>
+        <ul>
+          <li>
+            <p>To type on a computer keyboard.</p>
+            <p className="example">
+              "Keyboarding in the part of this job I hate the most."
+            </p>
+          </li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 };
 

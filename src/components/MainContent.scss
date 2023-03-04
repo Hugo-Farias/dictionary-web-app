@@ -2,27 +2,7 @@
 
 .main-content {
   margin-bottom: 10rem;
-  & .title-container {
-    @include flex-center;
-    justify-content: space-between;
-
-    & .title::first-letter {
-      text-transform: uppercase;
-    }
-
-    & .pronounciation {
-      font-weight: 400;
-      font-size: 2.4rem;
-      line-height: 2.9rem;
-      color: $primary-color;
-    }
-
-    & img {
-      opacity: 0.8;
-    }
-  }
-
-  & .type-separator-container {
+  & & .type-separator-container {
     @include flex-center;
   }
 
