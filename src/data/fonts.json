@@ -2,16 +2,16 @@
   {
     "id": 0,
     "name": "Sans Serif",
-    "cssValue": "Inter"
+    "cssValue": "inter"
   },
   {
     "id": 1,
     "name": "Serif",
-    "cssValue": "Lora"
+    "cssValue": "lora"
   },
   {
     "id": 2,
     "name": "Mono",
-    "cssValue": "Inconsolata"
+    "cssValue": "inconsolata"
   }
 ]

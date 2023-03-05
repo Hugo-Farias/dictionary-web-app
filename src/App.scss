@@ -11,19 +11,22 @@ $light-back-color: #757575;
 }
 
 @font-face {
-  $font-name: Lora;
+  $font-name: lora;
   font-family: $font-name;
-  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+  src: local($font-name),
+    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
 }
 @font-face {
-  $font-name: Inter;
+  $font-name: inter;
   font-family: $font-name;
-  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+  src: local($font-name),
+    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
 }
 @font-face {
-  $font-name: Inconsolata;
+  $font-name: inconsolata;
   font-family: $font-name;
-  src: url("src/assets/fonts/#{$font-name}/#{$font-name}.ttf");
+  src: local($font-name),
+    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
 }
 
 * {
