@@ -1,8 +1,9 @@
-$color-back: #181a1b;
+$color-back: #050505;
 $font-color: #efefef;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
 $light-back-color: #757575;
+$app-margin: 2rem;
 $font-names: lora, inter, inconsolata;
 
 @mixin flex-center {
@@ -37,7 +38,7 @@ body.light {
 }
 
 .app {
-  margin: 0 auto;
+  margin: $app-margin auto;
   padding: 0 3rem;
   max-width: 73.6rem;
   font-size: 3rem;

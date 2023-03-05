@@ -1,0 +1,19 @@
+@import "../App";
+
+.source-container {
+  text-decoration: underline $light-back-color;
+  margin: 3rem 0;
+  @include flex-center;
+  font-size: 1.8rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1rem;
+  & h5 {
+    font-weight: 400;
+    margin-right: 1rem;
+  }
+
+  & > a {
+    color: white;
+  }
+}

@@ -45,7 +45,7 @@
       padding: 2.4rem;
       list-style: none;
       min-width: 14.3rem;
-      top: 7rem;
+      top: calc($app-margin + 4rem);
       border-radius: 1.6rem;
       backdrop-filter: blur(0.5rem);
       background-color: rgba($window-color, 80%);

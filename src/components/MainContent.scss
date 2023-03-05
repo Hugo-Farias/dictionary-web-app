@@ -4,23 +4,13 @@
 .main-content {
   margin-bottom: 10rem;
 
-  & .source-container {
-    font-size: 14px;
-    line-height: 17px;
-    @include flex-center;
-    justify-content: flex-start;
-    gap: 1rem;
-    & h5 {
-      margin-right: 1rem;
-    }
-  }
-
-  & & h1 {
+  & h1 {
     font-size: 6.4rem;
     margin-bottom: 0.8rem;
   }
 
   & h3 {
+    font-weight: 400;
     margin-right: 2rem;
     font-style: italic;
     font-size: 2.4rem;

@@ -11,11 +11,13 @@ const App = function () {
     currentFont: FontT;
   };
 
+  const font = currentFont?.cssValue;
+
   return (
     <div className="app">
       <Navbar />
-      <SearchBar />
-      <MainContent data={DUMMY_DATA[0]} font={currentFont?.cssValue} />
+      <SearchBar font={font} />
+      <MainContent data={DUMMY_DATA[0]} font={font} />
     </div>
   );
 };

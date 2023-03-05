@@ -3,6 +3,8 @@ import { DictionaryData } from "../helpers/typeDefinitions";
 import React from "react";
 import TitleSection from "./TitleSection";
 import Meanings from "./Meanings";
+import Source from "./Source";
+import Separator from "./Separator";
 
 type propsT = {
   data: DictionaryData;
@@ -26,6 +28,8 @@ const MainContent: React.FC<propsT> = function ({ data, font }) {
         phonetics={data.phonetics}
       />
       {meaningsJSX}
+      <Separator size={"100%"} isHorizontal={true} />
+      <Source sourceUrls={data.sourceUrls} />
     </div>
   );
 };
