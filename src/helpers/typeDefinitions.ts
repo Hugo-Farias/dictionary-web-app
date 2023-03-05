@@ -48,7 +48,6 @@ export interface FontT {
   cssValue: string;
 }
 
-export interface stateActionT {
-  currentFont?: FontT;
-  payload?: FontT;
+export interface selectT {
+  fonts: { currentFont: FontT };
 }

@@ -10,19 +10,19 @@ export interface actionT {
 }
 
 const initialState = {
-  currentFont: { id: 0, name: "Sans Serif", cssValue: "Inter" },
+  currentFont: JSON.parse(localStorage.getItem("selectedFont")!),
 };
 
 const fontSlice = createSlice({
   name: "myFeature",
   initialState,
   reducers: {
-    changeFontTo: (state: stateT, action: actionT) => {
-      state.currentFont = action.payload;
+    changeFontTo: (state: stateT, { payload }: actionT) => {
+      state.currentFont = payload;
     },
   },
 });
 
 export const { changeFontTo } = fontSlice.actions;
 
-export const { actions, reducer: fontReducer } = fontSlice;
+export const { reducer: fontReducer } = fontSlice;

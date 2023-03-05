@@ -1,18 +1,16 @@
 import "./FontSelector.scss";
+import { FontT, selectT } from "../helpers/typeDefinitions";
 import arrowDown from "../assets/images/icon-arrow-down.svg";
 import { useState } from "react";
-import { FontT } from "../helpers/typeDefinitions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeFontTo } from "../store/slices/fontSlice";
-
-const fonts = [
-  { id: 0, name: "Sans Serif", cssValue: "Inter" },
-  { id: 1, name: "Serif", cssValue: "Lora" },
-  { id: 2, name: "Mono", cssValue: "Inconsolata" },
-];
+import fonts from "../data/fonts.json";
 
 const FontSelector = function () {
-  const [selectedOption, setSelectedOption] = useState<FontT>(fonts[0]);
+  const { currentFont } = useSelector<selectT>((s) => s.fonts) as {
+    currentFont: FontT;
+  };
+
   const [isHidden, setIsHidden] = useState<boolean>(true);
   const dispatch = useDispatch();
 
@@ -21,9 +19,9 @@ const FontSelector = function () {
   };
 
   const handleOptionClick = (option: FontT) => {
-    if (option.id === selectedOption.id) return;
-    setSelectedOption(option);
+    if (option.id === currentFont.id) return;
     setIsHidden(true);
+    localStorage.setItem("selectedFont", JSON.stringify(option));
     dispatch(changeFontTo(option));
   };
 
@@ -31,7 +29,7 @@ const FontSelector = function () {
     return (
       <li
         key={value.id}
-        className={value.id === selectedOption.id ? "active" : ""}
+        className={value.id === currentFont.id ? "active" : ""}
         onClick={() => handleOptionClick(value)}
       >
         <span style={{ fontFamily: value.cssValue }}>{value.name}</span>
@@ -44,9 +42,9 @@ const FontSelector = function () {
       <div className="font-current">
         <span
           onClick={handleToggleClick}
-          style={{ fontFamily: selectedOption.cssValue }}
+          style={{ fontFamily: currentFont.cssValue }}
         >
-          {selectedOption.name}
+          {currentFont.name}
           <img src={arrowDown} alt="Dropdown menu arrow" />
         </span>
         <ul className={isHidden ? "hide" : ""}>{ListRender}</ul>

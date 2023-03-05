@@ -4,14 +4,10 @@ import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import MainContent from "./components/MainContent";
 import DUMMY_DATA from "./data/DUMMY_DATA.json";
-import { FontT } from "./helpers/typeDefinitions";
-
-interface RootState {
-  fonts: { currentFont: FontT };
-}
+import { FontT, selectT } from "./helpers/typeDefinitions";
 
 const App = function () {
-  const { currentFont } = useSelector<RootState>((state) => state.fonts) as {
+  const { currentFont } = useSelector<selectT>((state) => state.fonts) as {
     currentFont: FontT;
   };
 

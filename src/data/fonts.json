@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "name": "Sans Serif",
+    "cssValue": "Inter"
+  },
+  {
+    "id": 1,
+    "name": "Serif",
+    "cssValue": "Lora"
+  },
+  {
+    "id": 2,
+    "name": "Mono",
+    "cssValue": "Inconsolata"
+  }
+]
