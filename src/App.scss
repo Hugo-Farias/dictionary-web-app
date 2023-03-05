@@ -3,6 +3,7 @@ $font-color: #efefef;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
 $light-back-color: #757575;
+$font-names: lora, inter, inconsolata;
 
 @mixin flex-center {
   display: flex;
@@ -10,23 +11,13 @@ $light-back-color: #757575;
   align-items: center;
 }
 
-@font-face {
-  $font-name: lora;
-  font-family: $font-name;
-  src: local($font-name),
-    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
-}
-@font-face {
-  $font-name: inter;
-  font-family: $font-name;
-  src: local($font-name),
-    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
-}
-@font-face {
-  $font-name: inconsolata;
-  font-family: $font-name;
-  src: local($font-name),
-    url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf") format("truetype");
+@each $font-name in $font-names {
+  @font-face {
+    font-family: $font-name;
+    src: local($font-name),
+      url("/src/assets/fonts/#{$font-name}/#{$font-name}.ttf")
+        format("truetype");
+  }
 }
 
 * {
