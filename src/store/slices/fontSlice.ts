@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { FontT } from "../../helpers/typeDefinitions";
+import fonts from "../../data/fonts.json";
 
 export interface stateT {
   currentFont: FontT;
@@ -9,8 +10,12 @@ export interface actionT {
   payload: FontT;
 }
 
+// Load first font if local storage not found
+const loadedFont =
+  JSON.parse(localStorage.getItem("selectedFont")!) || fonts[0];
+
 const initialState = {
-  currentFont: JSON.parse(localStorage.getItem("selectedFont")!),
+  currentFont: loadedFont,
 };
 
 const fontSlice = createSlice({
