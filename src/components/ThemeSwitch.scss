@@ -9,9 +9,9 @@ $height: 2rem;
     cursor: pointer;
     @include flex-center;
     background-color: $primary-color;
-    height: 2rem;
+    height: $height;
     width: 4rem;
-    border-radius: $height / 2;
+    border-radius: calc($height / 2);
 
     &.off {
       background-color: $light-back-color;
@@ -21,8 +21,8 @@ $height: 2rem;
     & > .lever {
       transition: transform 0.3s;
       background-color: #fff;
-      height: $height * 0.8;
-      width: $height * 0.8;
+      height: calc($height * 0.8);
+      width: calc($height * 0.8);
       border-radius: 50%;
       transform: translateX(60%);
     }

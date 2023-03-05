@@ -1,5 +1,16 @@
+$screen-medium: 450px;
+$screen-small: 350px;
+
 :root {
   font-size: 10px;
+
+  @media screen and (max-width: $screen-medium) {
+    font-size: 7.5px;
+  }
+
+  //@media screen and (max-width: $screen-small) {
+  //  font-size: 7.5px;
+  //}
 }
 
 html {
