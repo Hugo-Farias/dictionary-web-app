@@ -19,27 +19,30 @@
       background-color: $window-color;
       outline: none;
       //outline: 1px solid $primary-color;
-
-      & + img {
-        filter: grayscale(0);
-      }
     }
     &.invalid {
       outline: 1px solid #ff5252;
     }
   }
 
-  & img {
-    pointer-events: none;
-    filter: grayscale(100);
-    position: absolute;
-    top: 50%;
-    right: 3rem;
-    transform: translateY(-70%);
-    background-size: 2rem 2rem;
-    width: 2rem;
-    height: 2rem;
-    //z-index: -3;
+  & form {
+    & button {
+      background-color: transparent;
+      border: none;
+      border-radius: 0 2rem 2rem 0;
+      cursor: pointer;
+      position: absolute;
+      //top: 50%;
+      //transform: translateY(-70%);
+      right: 0;
+      background-size: 2rem 2rem;
+      width: 10%;
+      height: 90%;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.06);
+      }
+    }
   }
 
   & p {

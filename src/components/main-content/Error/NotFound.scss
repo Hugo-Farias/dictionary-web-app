@@ -1,0 +1,26 @@
+@import "../../../App";
+
+.not-found {
+  margin-top: 10rem;
+  text-align: center;
+  font-family: Inter, sans-serif;
+
+  & span {
+    font-size: 6.4rem;
+  }
+
+  & h5 {
+    margin: 4rem 0 2.2rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+  }
+
+  & h6 {
+    color: $light-back-color;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+  }
+}

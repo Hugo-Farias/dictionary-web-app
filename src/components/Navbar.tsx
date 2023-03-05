@@ -1,8 +1,8 @@
 import "./Navbar.scss";
 import logo from "../assets/images/logo.svg";
-import FontSelector from "./FontSelector";
-import Separator from "./Separator";
-import ThemeSwitch from "./ThemeSwitch";
+import FontSelector from "./navbar/FontSelector";
+import Separator from "./utilities/Separator";
+import ThemeSwitch from "./navbar/ThemeSwitch";
 
 const Navbar = function () {
   return (

@@ -1,6 +1,6 @@
 import "./Meanings.scss";
-import { meaningsT } from "../helpers/typeDefinitions";
-import Separator from "./Separator";
+import { meaningsT } from "../../helpers/typeDefinitions";
+import Separator from "../utilities/Separator";
 import React from "react";
 import MeaningsNyms from "./MeaningsNyms";
 import MeaningsExample from "./MeaningsExample";

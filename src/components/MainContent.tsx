@@ -1,10 +1,10 @@
 import "./MainContent.scss";
 import { DictionaryData } from "../helpers/typeDefinitions";
 import React from "react";
-import TitleSection from "./TitleSection";
-import Meanings from "./Meanings";
-import Source from "./Source";
-import Separator from "./Separator";
+import TitleSection from "./main-content/TitleSection";
+import Meanings from "./main-content/Meanings";
+import Source from "./main-content/Source";
+import Separator from "./utilities/Separator";
 
 type propsT = {
   data: DictionaryData;

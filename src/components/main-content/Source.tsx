@@ -1,6 +1,6 @@
 import React from "react";
 import "./Source.scss";
-import sourceIcon from "../assets/images/icon-new-window.svg";
+import sourceIcon from "../../assets/images/icon-new-window.svg";
 
 interface propsT {
   sourceUrls: string[];

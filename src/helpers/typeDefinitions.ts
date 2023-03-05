@@ -28,6 +28,12 @@ export interface DictionaryData {
   sourceUrls: string[];
 }
 
+export interface DictDataError {
+  title: string;
+  message: string;
+  resolution: string;
+}
+
 export interface meaningsT {
   meanings: {
     partOfSpeech: string;

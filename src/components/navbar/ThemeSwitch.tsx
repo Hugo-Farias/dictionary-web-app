@@ -1,6 +1,6 @@
 import "./ThemeSwitch.scss";
 import React, { useState } from "react";
-import nightIcon from "../assets/images/icon-moon.svg";
+import nightIcon from "../../assets/images/icon-moon.svg";
 
 const ThemeSwitch = function () {
   const [on, setOn] = useState(true);

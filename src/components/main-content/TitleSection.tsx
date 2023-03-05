@@ -1,5 +1,5 @@
 import "./TitleSection.scss";
-import playIcon from "../assets/images/icon-play.svg";
+import playIcon from "../../assets/images/icon-play.svg";
 import React from "react";
 
 interface propsT {
