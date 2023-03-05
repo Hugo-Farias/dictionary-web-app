@@ -1,9 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./slices/mainSlice";
+import { fontReducer } from "./slices/fontSlice";
+
+console.log(typeof fontReducer);
+
+export interface storeTypes {
+  reducer: () => {};
+}
 
 const store = configureStore({
   reducer: {
-    main: reducer,
+    fonts: fontReducer,
   },
 });
 

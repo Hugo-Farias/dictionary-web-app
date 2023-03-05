@@ -41,3 +41,14 @@ export interface meaningsT {
     antonyms: string[];
   };
 }
+
+export interface FontT {
+  id: number;
+  name: string;
+  cssValue: string;
+}
+
+export interface stateActionT {
+  currentFont?: FontT;
+  payload?: FontT;
+}
