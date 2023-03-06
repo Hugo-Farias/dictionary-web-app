@@ -54,6 +54,10 @@ export interface FontT {
   cssValue: string;
 }
 
-export interface selectT {
+export interface selectFontsT {
   fonts: { currentFont: FontT };
+}
+
+export interface selectWordsT {
+  words: { currentWord: string };
 }
