@@ -1,17 +1,15 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
 import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { changeWordTo } from "../store/slices/wordSlice";
 import { getCurrentWord } from "../helpers/functions";
+import { useNavigate } from "react-router-dom";
 
 interface propsT {
   font: string;
 }
 
 const SearchBar: React.FC<propsT> = function ({ font }) {
-  const { currentWord } = getCurrentWord();
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const searchRef = useRef(null);
   const [invalid, setInvalid] = useState<boolean>(false);
 
@@ -20,7 +18,7 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
     const { value } = searchRef.current!;
     if (!value) return setInvalid(true);
 
-    dispatch(changeWordTo(value));
+    navigate(value);
   };
 
   return (
@@ -33,7 +31,7 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
           type="text"
           className={`search-bar ${invalid ? "invalid" : ""}`}
           placeholder="Search for any word..."
-          defaultValue={currentWord}
+          value={getCurrentWord()}
           max="10"
         />
         <button>

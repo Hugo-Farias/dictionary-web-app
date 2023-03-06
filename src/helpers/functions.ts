@@ -1,6 +1,7 @@
 import { API_URL } from "./variables";
 import { useSelector } from "react-redux";
 import { FontT, selectFontsT, selectWordsT } from "./typeDefinitions";
+import { useLocation } from "react-router";
 
 export const getData = async function (word: string) {
   if (!word) return;
@@ -9,9 +10,7 @@ export const getData = async function (word: string) {
 };
 
 export const getCurrentWord = function () {
-  return useSelector<selectWordsT>((state) => state.words) as {
-    currentWord: string;
-  };
+  return useLocation().pathname.slice(1);
 };
 
 export const getCurrentFont = function () {

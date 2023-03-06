@@ -1,3 +1,5 @@
+@import "./App";
+
 $screen-medium: 450px;
 $screen-small: 350px;
 
@@ -19,10 +21,12 @@ html {
   box-sizing: border-box;
 }
 
-a {
+a,
+Link {
   transition: filter 0.3s;
   cursor: pointer;
   text-decoration: none;
+  color: $primary-color;
 
   &:hover {
     filter: brightness(120%);

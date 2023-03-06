@@ -14,6 +14,11 @@
 
   & ul {
     @include flex-center;
+    margin-left: 2rem;
+    max-height: 3rem;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-wrap: break-word;
     //flex-wrap: wrap;
     list-style: none;
     padding: 2.4rem;
