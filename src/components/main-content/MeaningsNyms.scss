@@ -6,6 +6,12 @@
   justify-content: flex-start;
   height: 3rem;
 
+  &:not(:only-child) {
+    &:last-child {
+      margin-top: 3rem;
+    }
+  }
+
   & ul {
     @include flex-center;
     //flex-wrap: wrap;

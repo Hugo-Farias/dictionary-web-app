@@ -1,5 +1,7 @@
 import "./MeaningsNyms.scss";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { changeWordTo } from "../../store/slices/wordSlice";
 
 type propsT = {
   list: string[];
@@ -9,10 +11,18 @@ type propsT = {
 const MeaningsNyms = function ({ name, list }: propsT) {
   if (list.length < 1) return null;
 
+  const dispatch = useDispatch();
+
+  const handleClick = function (e: any) {
+    const value: string = e.target.id;
+
+    dispatch(changeWordTo(value));
+  };
+
   const JSX = list.map((v, i) => (
-    <li key={i}>
-      <a>{v}</a>
-    </li>
+    <a key={i} onClick={handleClick}>
+      <li id={v}>{v}</li>
+    </a>
   ));
 
   return (

@@ -34,14 +34,18 @@ const TitleSection: React.FC<propsT> = function (props) {
         <h1 className="title">{word}</h1>
         <span className="pronounciation">{phonetic}</span>
       </div>
-      <a>
-        <img
-          src={playIcon}
-          alt="Play Pronounciation"
-          className="play-audio"
-          onClick={handlePlayButton}
-        />
-      </a>
+      {phoneticsData?.audio ? (
+        <a>
+          <img
+            src={playIcon}
+            alt="Play Pronounciation"
+            className="play-audio"
+            onClick={handlePlayButton}
+          />
+        </a>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

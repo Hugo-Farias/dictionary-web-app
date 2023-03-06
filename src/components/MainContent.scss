@@ -28,14 +28,4 @@
   h5 {
     color: $light-back-color;
   }
-
-  & a {
-    transition: filter 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-
-    &:hover {
-      filter: brightness(120%);
-    }
-  }
 }

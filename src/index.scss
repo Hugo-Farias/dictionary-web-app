@@ -18,3 +18,13 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  transition: filter 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}

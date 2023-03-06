@@ -21,7 +21,7 @@ const wordSlice = createSlice({
   initialState,
   reducers: {
     changeWordTo: (state: stateT, { payload }: actionT) => {
-      history.replaceState("", "Dictionary", `?=${payload}`);
+      history.replaceState("", payload, `?=${payload}`);
       state.currentWord = payload;
     },
   },
