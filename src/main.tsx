@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.scss";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 if (import.meta.hot) {
   import.meta.hot.on("vite:beforeUpdate", () => console.clear());
@@ -12,7 +13,9 @@ if (import.meta.hot) {
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>
 );

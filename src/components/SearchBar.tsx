@@ -11,8 +11,6 @@ interface propsT {
 
 const SearchBar: React.FC<propsT> = function ({ font }) {
   const { currentWord } = getCurrentWord();
-  const [value, setValue] = useState<string>(currentWord);
-  console.log(value);
   const dispatch = useDispatch();
   const searchRef = useRef(null);
   const [invalid, setInvalid] = useState<boolean>(false);
@@ -22,7 +20,6 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
     const { value } = searchRef.current!;
     if (!value) return setInvalid(true);
 
-    setValue(currentWord);
     dispatch(changeWordTo(value));
   };
 

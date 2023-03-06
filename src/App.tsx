@@ -5,22 +5,29 @@ import MainContent from "./components/MainContent";
 import NotFound from "./components/main-content/Error/NotFound";
 import { useEffect, useState } from "react";
 import { getCurrentFont, getCurrentWord, getData } from "./helpers/functions";
+import { changeWordTo } from "./store/slices/wordSlice";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router";
 // import DATA from "./data/DUMMY_DATA.json";
 // import DATA from "./data/DUMMY_DATA_ERROR.json";
 
 const App = function () {
+  const dispatch = useDispatch();
   const { currentWord } = getCurrentWord();
-  console.log(currentWord);
   const { currentFont } = getCurrentFont();
 
   const [apiData, setApiData] = useState(null);
+
+  console.log(useLocation());
 
   useEffect(() => {
     const awaitFunc = async function () {
       setApiData(await getData(currentWord));
     };
     awaitFunc();
-  }, [currentWord]);
+
+    console.log("useEffect=> " + currentWord);
+  }, [currentWord, window.location]);
 
   const font = currentFont?.cssValue;
 
