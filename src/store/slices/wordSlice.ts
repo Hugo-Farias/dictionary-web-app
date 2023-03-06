@@ -10,10 +10,9 @@ export interface actionT {
 
 // Word from  url
 const searchParams = new URLSearchParams(document.location.search);
-const loadedWord = searchParams.values().next().value || "";
 
 const initialState = {
-  currentWord: loadedWord,
+  currentWord: searchParams.values().next().value || "",
 };
 
 const wordSlice = createSlice({
@@ -21,8 +20,9 @@ const wordSlice = createSlice({
   initialState,
   reducers: {
     changeWordTo: (state: stateT, { payload }: actionT) => {
-      history.replaceState("", payload, `?=${payload}`);
       state.currentWord = payload;
+      // history.pushState("", payload, `?=${payload}`);
+      history.pushState("", payload, `?=${payload}`);
     },
   },
 });

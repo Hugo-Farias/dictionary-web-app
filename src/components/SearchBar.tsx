@@ -1,26 +1,28 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
 import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeWordTo } from "../store/slices/wordSlice";
-import { selectWordsT } from "../helpers/typeDefinitions";
+import { getCurrentWord } from "../helpers/functions";
 
 interface propsT {
   font: string;
 }
 
 const SearchBar: React.FC<propsT> = function ({ font }) {
-  const { currentWord } = useSelector<selectWordsT>((s) => s.words) as {
-    currentWord: string;
-  };
+  const { currentWord } = getCurrentWord();
+  const [value, setValue] = useState<string>(currentWord);
+  console.log(value);
   const dispatch = useDispatch();
   const searchRef = useRef(null);
-  const [invalid, setInvalid] = useState<any>(null);
+  const [invalid, setInvalid] = useState<boolean>(false);
 
   const handleSubmit = function (e: any) {
     e.preventDefault();
     const { value } = searchRef.current!;
     if (!value) return setInvalid(true);
+
+    setValue(currentWord);
     dispatch(changeWordTo(value));
   };
 
@@ -30,11 +32,12 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
         <input
           style={{ fontFamily: font }}
           ref={searchRef}
-          onInput={() => setInvalid(null)}
+          onInput={() => setInvalid(false)}
           type="text"
           className={`search-bar ${invalid ? "invalid" : ""}`}
           placeholder="Search for any word..."
           defaultValue={currentWord}
+          max="10"
         />
         <button>
           <img src={searchIcon} alt="Search Icon" />

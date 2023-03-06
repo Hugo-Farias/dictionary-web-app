@@ -4,9 +4,8 @@
 .meanings {
   & ul {
     padding-inline: 4.7rem;
-    font-weight: 400;
-    font-size: 18px;
     line-height: 24px;
+    font-size: 18px;
 
     & li {
       font-size: 1.8rem;
@@ -22,5 +21,7 @@
 
   & .type-separator-container {
     @include flex-center;
+    margin-top: 3rem;
+    max-height: 12rem;
   }
 }

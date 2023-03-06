@@ -1,22 +1,17 @@
 import "./App.scss";
-import { useSelector } from "react-redux";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import MainContent from "./components/MainContent";
-// import DATA from "./data/DUMMY_DATA.json";
-// import DATA from "./data/DUMMY_DATA_ERROR.json";
-import { FontT, selectFontsT, selectWordsT } from "./helpers/typeDefinitions";
 import NotFound from "./components/main-content/Error/NotFound";
 import { useEffect, useState } from "react";
-import { getData } from "./helpers/functions";
+import { getCurrentFont, getCurrentWord, getData } from "./helpers/functions";
+// import DATA from "./data/DUMMY_DATA.json";
+// import DATA from "./data/DUMMY_DATA_ERROR.json";
 
 const App = function () {
-  const { currentWord } = useSelector<selectWordsT>((s) => s.words) as {
-    currentWord: string;
-  };
-  const { currentFont } = useSelector<selectFontsT>((state) => state.fonts) as {
-    currentFont: FontT;
-  };
+  const { currentWord } = getCurrentWord();
+  console.log(currentWord);
+  const { currentFont } = getCurrentFont();
 
   const [apiData, setApiData] = useState(null);
 
