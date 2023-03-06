@@ -1,16 +1,14 @@
 import "./NotFound.scss";
 import React from "react";
-import { DictDataError, selectWordsT } from "../../../helpers/typeDefinitions";
-import { useSelector } from "react-redux";
+import { DictDataError } from "../../../helpers/typeDefinitions";
+import { getCurrentWord } from "../../../helpers/functions";
 
 interface propsT {
   data: DictDataError;
 }
 
 const NotFound: React.FC<propsT> = function ({ data }) {
-  const { currentWord } = useSelector<selectWordsT>((s) => s.words) as {
-    currentWord: string;
-  };
+  const currentWord = getCurrentWord();
   const { title, message, resolution } = data;
 
   return (

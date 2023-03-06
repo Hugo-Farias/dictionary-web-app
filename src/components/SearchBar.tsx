@@ -1,25 +1,37 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
-import React, { useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { getCurrentWord } from "../helpers/functions";
-import { useNavigate } from "react-router-dom";
+import useGoTo from "../hooks/useGoTo";
 
 interface propsT {
   font: string;
 }
 
 const SearchBar: React.FC<propsT> = function ({ font }) {
-  const navigate = useNavigate();
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLInputElement>(null);
+  const goto = useGoTo();
+  const currentWord = getCurrentWord();
   const [invalid, setInvalid] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>(currentWord);
 
-  const handleSubmit = function (e: any) {
+  if (searchRef.current) searchRef.current.focus();
+
+  const handleSubmit = function (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const { value } = searchRef.current!;
-    if (!value) return setInvalid(true);
+    if (!searchRef.current) return setInvalid(true);
 
-    navigate(value);
+    const { value } = searchRef.current;
+
+    goto(value);
   };
+
+  const handleChange = function (e: ChangeEvent<HTMLInputElement>) {
+    setInvalid(false);
+    if (searchRef.current) setInputValue(searchRef.current.value);
+  };
+
+  useEffect(() => setInputValue(currentWord), [currentWord]);
 
   return (
     <div className={`search-container`}>
@@ -27,12 +39,12 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
         <input
           style={{ fontFamily: font }}
           ref={searchRef}
-          onInput={() => setInvalid(false)}
+          onChange={handleChange}
           type="text"
           className={`search-bar ${invalid ? "invalid" : ""}`}
           placeholder="Search for any word..."
-          value={getCurrentWord()}
           max="10"
+          value={inputValue}
         />
         <button>
           <img src={searchIcon} alt="Search Icon" />

@@ -57,7 +57,3 @@ export interface FontT {
 export interface selectFontsT {
   fonts: { currentFont: FontT };
 }
-
-export interface selectWordsT {
-  words: { currentWord: string };
-}

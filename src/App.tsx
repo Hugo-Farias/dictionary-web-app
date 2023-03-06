@@ -17,10 +17,9 @@ const App = function () {
   useEffect(() => {
     const awaitFunc = async function () {
       setApiData(await getData(currentWord));
+      window.scrollTo(0, 0);
     };
     awaitFunc();
-
-    console.log("useEffect=> " + currentWord);
   }, [currentWord]);
 
   const font = currentFont?.cssValue;
