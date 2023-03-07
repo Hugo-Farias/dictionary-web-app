@@ -1,3 +1,5 @@
+import { stateT } from "../store/slices/mainSlice";
+
 export interface DictionaryData {
   word: string;
   phonetic: string;
@@ -54,6 +56,6 @@ export interface FontT {
   cssValue: string;
 }
 
-export interface selectFontsT {
-  fonts: { currentFont: FontT };
+export interface selectT {
+  main: stateT;
 }

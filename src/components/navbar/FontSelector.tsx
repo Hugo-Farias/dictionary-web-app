@@ -1,13 +1,13 @@
 import "./FontSelector.scss";
-import { FontT, selectFontsT } from "../../helpers/typeDefinitions";
+import { FontT, selectT } from "../../helpers/typeDefinitions";
 import arrowDown from "../../assets/images/icon-arrow-down.svg";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFontTo } from "../../store/slices/fontSlice";
+import { changeFontTo } from "../../store/slices/mainSlice";
 import fonts from "../../data/fonts.json";
 
 const FontSelector = function () {
-  const { currentFont } = useSelector<selectFontsT>((s) => s.fonts) as {
+  const { currentFont } = useSelector<selectT>((s) => s.main) as {
     currentFont: FontT;
   };
 

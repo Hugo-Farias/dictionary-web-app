@@ -4,6 +4,7 @@ import fonts from "../../data/fonts.json";
 
 export interface stateT {
   currentFont: FontT;
+  nightMode: boolean;
 }
 
 export interface actionT {
@@ -14,20 +15,24 @@ export interface actionT {
 const loadedFont =
   JSON.parse(localStorage.getItem("selectedFont")!) || fonts[0];
 
-const initialState = {
+const initialState: stateT = {
   currentFont: loadedFont,
+  nightMode: true,
 };
 
-const fontSlice = createSlice({
+const mainSlice = createSlice({
   name: "myFeature",
   initialState,
   reducers: {
     changeFontTo: (state: stateT, { payload }: actionT) => {
       state.currentFont = payload;
     },
+    switchTheme: (state: stateT) => {
+      state.nightMode = !state.nightMode;
+    },
   },
 });
 
-export const { changeFontTo } = fontSlice.actions;
+export const { changeFontTo, switchTheme } = mainSlice.actions;
 
-export const { reducer: fontReducer } = fontSlice;
+export const { reducer: mainReducer } = mainSlice;

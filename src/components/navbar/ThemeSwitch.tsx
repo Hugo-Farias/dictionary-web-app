@@ -1,12 +1,16 @@
 import "./ThemeSwitch.scss";
-import React, { useState } from "react";
+import React from "react";
 import nightIcon from "../../assets/images/icon-moon.svg";
+import { useDispatch } from "react-redux";
+import { switchTheme } from "../../store/slices/mainSlice";
+import { getSlice } from "../../helpers/functions";
 
 const ThemeSwitch = function () {
-  const [on, setOn] = useState(true);
+  const on: boolean = getSlice().nightMode;
+  const dispatch = useDispatch();
 
   const onClickHandler = function () {
-    setOn((prevState) => !prevState);
+    dispatch(switchTheme());
   };
 
   return (

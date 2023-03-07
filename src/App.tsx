@@ -4,15 +4,13 @@ import SearchBar from "./components/SearchBar";
 import MainContent from "./components/MainContent";
 import NotFound from "./components/main-content/Error/NotFound";
 import { useEffect, useState } from "react";
-import { getCurrentFont, getCurrentWord, getData } from "./helpers/functions";
-// import DATA from "./data/DUMMY_DATA.json";
-// import DATA from "./data/DUMMY_DATA_ERROR.json";
+import { getSlice, getCurrentWord, getData } from "./helpers/functions";
+import { DictDataError } from "./helpers/typeDefinitions";
 
 const App = function () {
-  const currentWord = getCurrentWord();
-  const { currentFont } = getCurrentFont();
-  const [apiData, setApiData] = useState(null);
-  const [error, setError] = useState(false);
+  const currentWord: string = getCurrentWord();
+  const { currentFont, nightMode } = getSlice();
+  const [apiData, setApiData] = useState<DictDataError | null>(null);
 
   useEffect(() => {
     getData(currentWord)
@@ -33,7 +31,7 @@ const App = function () {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${nightMode ? "" : "light"}`}>
       <Navbar />
       <SearchBar font={font} />
       {contentOrError}
