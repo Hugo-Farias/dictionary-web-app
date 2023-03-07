@@ -4,30 +4,40 @@
   @include flex-center;
   margin-top: 6.4rem;
   justify-content: flex-start;
-  height: 3rem;
+  //min-height: 3rem;
 
   &:not(:only-child) {
     &:last-child {
-      margin-top: 3rem;
+      //border-top: 1px solid white;
+      margin-top: 8rem;
     }
   }
 
   & ul {
+    padding: 0;
     @include flex-center;
+    justify-content: normal;
     margin-left: 2rem;
-    max-height: 3rem;
-    overflow: hidden;
-    overflow-x: scroll;
-    overflow-wrap: break-word;
-    //flex-wrap: wrap;
+    //padding-inline: 3rem;
+    //overflow-y: hidden;
+    //overflow-x: auto;
+    flex-wrap: wrap;
+    scroll-padding-inline: 3rem;
+    scroll-margin-inline: 4rem;
     list-style: none;
-    padding: 2.4rem;
     gap: 2rem;
     color: $primary-color;
     font-weight: 700;
     font-size: 2rem;
+    //@include scrollbar-theme;
+
+    //&::after {
+    //  content: "";
+    //  color: red;
+    //}
 
     & li {
+      white-space: nowrap;
       margin: 0;
     }
   }

@@ -11,15 +11,15 @@ import { getCurrentFont, getCurrentWord, getData } from "./helpers/functions";
 const App = function () {
   const currentWord = getCurrentWord();
   const { currentFont } = getCurrentFont();
-
   const [apiData, setApiData] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const awaitFunc = async function () {
-      setApiData(await getData(currentWord));
-      window.scrollTo(0, 0);
-    };
-    awaitFunc();
+    getData(currentWord)
+      .then((v) => {
+        setApiData(v);
+      })
+      .then(() => window.scrollTo(0, 0));
   }, [currentWord]);
 
   const font = currentFont?.cssValue;

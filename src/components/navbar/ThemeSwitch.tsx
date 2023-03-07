@@ -10,15 +10,12 @@ const ThemeSwitch = function () {
   };
 
   return (
-    <div className="theme-container">
-      <div
-        className={`theme-switch ${on ? "" : "off"}`}
-        onClick={onClickHandler}
-      >
+    <a className="theme-container" onClick={onClickHandler}>
+      <div className={`theme-switch ${on ? "" : "off"}`}>
         <div className="lever" />
       </div>
       <img src={nightIcon} alt="night theme icon" />
-    </div>
+    </a>
   );
 };
 

@@ -14,7 +14,7 @@ const Separator: React.FC<propsType> = function (props) {
   const style = {
     height: isHorizontal ? "0.1rem" : size,
     width: !isHorizontal ? "0.1rem" : size,
-    opacity: opacity ? opacity : 1,
+    opacity: opacity ? opacity : 0.5,
     margin: margin ? margin : 0,
   };
   return <div className="separator" style={style} />;

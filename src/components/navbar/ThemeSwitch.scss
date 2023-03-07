@@ -4,9 +4,9 @@ $height: 2rem;
 
 .theme-container {
   @include flex-center;
+  cursor: pointer;
   gap: 1rem;
   & .theme-switch {
-    cursor: pointer;
     @include flex-center;
     background-color: $primary-color;
     height: $height;

@@ -19,12 +19,7 @@ const Meanings: React.FC<meaningsT> = function ({ meanings }) {
     <div className="meanings">
       <div className="type-separator-container">
         <h3>{partOfSpeech}</h3>
-        <Separator
-          isHorizontal={true}
-          size={"100%"}
-          opacity={0.5}
-          margin={"5.4rem 0"}
-        />
+        <Separator isHorizontal={true} size={"100%"} margin={"5.4rem 0"} />
       </div>
 
       <div className="defintions">

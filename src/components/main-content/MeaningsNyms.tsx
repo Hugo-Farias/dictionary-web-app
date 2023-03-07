@@ -2,6 +2,7 @@ import "./MeaningsNyms.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { formatForUrl } from "../../helpers/functions";
+import Separator from "../utilities/Separator";
 
 type propsT = {
   list: string[];
@@ -13,17 +14,15 @@ const MeaningsNyms = function ({ name, list }: propsT) {
 
   const JSX = list.map((v, i) => (
     <Link to={formatForUrl(v)} key={i}>
-      <li id={v}>{v}</li>
+      <li>{v}</li>
     </Link>
   ));
 
   return (
-    <>
-      <div className="nyms">
-        <h4>{name}</h4>
-        <ul>{JSX}</ul>
-      </div>
-    </>
+    <div className="nyms">
+      <h4>{name}</h4>
+      <ul>{JSX}</ul>
+    </div>
   );
 };
 

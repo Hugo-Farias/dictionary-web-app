@@ -9,7 +9,7 @@ const Navbar = function () {
     <div className="navbar">
       <img src={logo} alt="Dictionary logo" />
       <FontSelector />
-      <Separator isHorizontal={false} size={"3.2rem"} opacity={0.5} />
+      <Separator isHorizontal={false} size={"3.2rem"} />
       <ThemeSwitch />
     </div>
   );

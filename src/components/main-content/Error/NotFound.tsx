@@ -15,7 +15,7 @@ const NotFound: React.FC<propsT> = function ({ data }) {
     <div className="not-found">
       <span>😕</span>
       <h5>{title}</h5>
-      <h6>{message + resolution}</h6>
+      <h6>{`${message} ${resolution}`}</h6>
       <a href={`https://en.wikipedia.org/wiki/${currentWord}`} target="_blank">
         Search on Wikipedia.com
       </a>
