@@ -6,6 +6,8 @@ function useGoTo() {
 
   function navigateWithUnderscores(path: string, options?: any) {
     const pathWithUnderscores = formatForUrl(path);
+
+    if (!pathWithUnderscores) return;
     navigate(pathWithUnderscores, options);
   }
 

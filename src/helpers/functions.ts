@@ -11,7 +11,8 @@ export const getData = async function (word: string) {
 };
 
 export const getCurrentWord = function () {
-  return useLocation().pathname.slice(1).replaceAll("_", " ");
+  const word = useLocation().pathname.slice(1).replaceAll("_", " ");
+  return specialCharsCheck(word) ? "" : word;
 };
 
 export const getSlice = function () {
@@ -19,5 +20,16 @@ export const getSlice = function () {
 };
 
 export const formatForUrl = function (word: string) {
+  if (specialCharsCheck(word)) return "";
   return word.trim().replaceAll(" ", "_");
+};
+
+export const specialCharsCheck = function (query: string) {
+  const specialChars = '!@#$%^&*()_+=][|}{;":/.,?><~\\';
+
+  if (query.length === 1) return specialChars.includes(query.slice(-1));
+
+  return query
+    .split("")
+    .some((value) => specialChars.includes(value.slice(-1)));
 };

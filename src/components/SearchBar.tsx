@@ -1,18 +1,25 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
 import React, { useEffect, useRef, useState } from "react";
-import { getCurrentWord, getSlice } from "../helpers/functions";
+import {
+  getCurrentWord,
+  getSlice,
+  specialCharsCheck,
+} from "../helpers/functions";
 import useGoTo from "../hooks/useGoTo";
+import Invalid from "./search-bar/Invalid";
 
 const SearchBar = function () {
   const searchRef = useRef<HTMLInputElement>(null);
   const { currentFont } = getSlice();
   const goto = useGoTo();
   const currentWord = getCurrentWord();
-  const [invalid, setInvalid] = useState<boolean>(false);
+  const [invalid, setInvalid] = useState<boolean | string>(false);
   const [inputValue, setInputValue] = useState<string>(currentWord);
 
   if (searchRef.current) searchRef.current.focus();
+
+  const invalidMsg = "Invalid charater...";
 
   const handleSubmit = function (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,14 +28,20 @@ const SearchBar = function () {
 
     const { value } = searchRef.current;
 
-    if (!value) return setInvalid(true);
+    if (!value) return setInvalid("Whoops, can't be empty...");
 
     goto(value);
   };
 
   const handleChange = function () {
     setInvalid(false);
-    if (searchRef.current) setInputValue(searchRef.current.value);
+    if (!searchRef.current) return;
+
+    const { value } = searchRef.current;
+
+    if (specialCharsCheck(value)) return setInvalid(invalidMsg);
+
+    setInputValue(value);
   };
 
   useEffect(() => setInputValue(currentWord), [currentWord]);
@@ -44,14 +57,13 @@ const SearchBar = function () {
           className={`search-bar ${invalid ? "invalid" : ""}`}
           placeholder="Search for any word..."
           maxLength={50}
-          minLength={1}
           value={inputValue}
         />
         <button>
           <img src={searchIcon} alt="Search Icon" />
         </button>
       </form>
-      {invalid ? <p>Whoops, can't be empty...</p> : ""}
+      <Invalid invalid={invalid} />
     </div>
   );
 };
