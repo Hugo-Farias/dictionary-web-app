@@ -1,11 +1,18 @@
-@import "src/App";
+@import "../../App";
 
 .title-container {
   @include flex-center;
   justify-content: space-between;
 
-  & .title::first-letter {
-    text-transform: uppercase;
+  & .title {
+    //max-width: 29ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //flex-grow: 1;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   & .pronounciation {

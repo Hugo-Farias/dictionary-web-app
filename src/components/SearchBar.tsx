@@ -43,7 +43,8 @@ const SearchBar = function () {
           type="text"
           className={`search-bar ${invalid ? "invalid" : ""}`}
           placeholder="Search for any word..."
-          max="10"
+          maxLength={50}
+          minLength={1}
           value={inputValue}
         />
         <button>

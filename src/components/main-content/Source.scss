@@ -13,6 +13,9 @@
   }
 
   & > a {
+    max-width: 50ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: $font-color;
     .light & {
       color: $light-font-color;

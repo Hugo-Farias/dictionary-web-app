@@ -17,7 +17,16 @@ interface propsT {
 }
 
 const TitleSection: React.FC<propsT> = function (props) {
-  const { word, phonetic, phonetics } = props;
+  let { word, phonetic, phonetics } = props;
+
+  let style: { fontSize: string } = { fontSize: "6.4rem" };
+
+  // Give words with a lot of characters smaller font sizes dynamically
+  if (word.length >= 16) {
+    style = {
+      fontSize: `${100 / word.length}rem`,
+    };
+  }
 
   const phoneticsData = phonetics.find((v) => Object.keys(v).length > 2);
 
@@ -31,7 +40,9 @@ const TitleSection: React.FC<propsT> = function (props) {
   return (
     <div className="title-container">
       <div className="title-pronounciation-container">
-        <h1 className="title">{word}</h1>
+        <h1 className="title" style={style}>
+          {word}
+        </h1>
         <span className="pronounciation">{phonetic}</span>
       </div>
       {phoneticsData?.audio ? (
