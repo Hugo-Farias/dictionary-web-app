@@ -2,9 +2,12 @@ $color-back: #050505;
 $font-color: #efefef;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
-$light-back-color: #757575;
+$back-color: #757575;
 $app-margin: 2rem;
 $font-names: lora, inter, inconsolata;
+
+$light-font-color: $color-back;
+$light-color-back: $font-color;
 
 @mixin flex-center {
   display: flex;

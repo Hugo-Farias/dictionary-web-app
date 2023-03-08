@@ -1,4 +1,4 @@
-import { stateT } from "../store/slices/mainSlice";
+import { sliceT } from "../store/slices/mainSlice";
 
 export interface DictionaryData {
   word: string;
@@ -57,5 +57,5 @@ export interface FontT {
 }
 
 export interface selectT {
-  main: stateT;
+  main: sliceT;
 }

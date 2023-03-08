@@ -6,10 +6,12 @@ import NotFound from "./components/main-content/Error/NotFound";
 import { useEffect, useState } from "react";
 import { getSlice, getCurrentWord, getData } from "./helpers/functions";
 import { DictDataError } from "./helpers/typeDefinitions";
+import LightMode from "./components/navbar/theme-switch/LightMode";
+import { sliceT } from "./store/slices/mainSlice";
 
 const App = function () {
   const currentWord: string = getCurrentWord();
-  const { currentFont, nightMode } = getSlice();
+  const { currentFont, nightMode }: sliceT = getSlice();
   const [apiData, setApiData] = useState<DictDataError | null>(null);
 
   useEffect(() => {
@@ -32,8 +34,9 @@ const App = function () {
 
   return (
     <div className={`app ${nightMode ? "" : "light"}`}>
+      <LightMode switch={nightMode} />
       <Navbar />
-      <SearchBar font={font} />
+      <SearchBar />
       {contentOrError}
     </div>
   );

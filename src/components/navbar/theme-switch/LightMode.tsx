@@ -5,7 +5,7 @@ interface propsT {
 }
 
 const LightMode: React.FC<propsT> = function (props) {
-  if (!props.switch) return null;
+  if (props.switch) return null;
 
   return (
     <style>

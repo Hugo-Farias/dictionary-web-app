@@ -1,7 +1,7 @@
 import { API_URL } from "./variables";
 import { useSelector } from "react-redux";
 import { selectT } from "./typeDefinitions";
-import { stateT } from "../store/slices/mainSlice";
+import { sliceT } from "../store/slices/mainSlice";
 import { useLocation } from "react-router";
 
 export const getData = async function (word: string) {
@@ -15,7 +15,7 @@ export const getCurrentWord = function () {
 };
 
 export const getSlice = function () {
-  return useSelector<selectT>((state) => state.main) as stateT;
+  return useSelector<selectT>((state) => state.main) as sliceT;
 };
 
 export const formatForUrl = function (word: string) {

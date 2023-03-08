@@ -15,15 +15,18 @@
     font-weight: 700;
     color: $font-color;
 
-    &.light {
-      background-color: invert(darken($window-color, 4%));
-      color: invert($font-color);
+    .light & {
+      background-color: lighten($light-color-back, 2%);
+      color: $light-font-color;
+      &:focus {
+        background-color: darken($light-color-back, 2%);
+      }
     }
 
     &:focus {
       background-color: $window-color;
-      outline: none;
-      //outline: 1px solid $primary-color;
+      //outline: none;
+      outline: 1px solid $primary-color;
     }
     &.invalid {
       outline: 1px solid #ff5252;
@@ -45,7 +48,13 @@
       height: 90%;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.06);
+        background-color: rgba($font-color, 0.06);
+      }
+
+      .light & {
+        &:hover {
+          background-color: rgba($light-font-color, 0.06);
+        }
       }
     }
   }

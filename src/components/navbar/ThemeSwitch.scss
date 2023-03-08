@@ -14,7 +14,7 @@ $height: 2rem;
     border-radius: calc($height / 2);
 
     &.off {
-      background-color: $light-back-color;
+      background-color: $back-color;
       color: white;
     }
 

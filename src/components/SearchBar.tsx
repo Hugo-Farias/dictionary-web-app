@@ -1,19 +1,15 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
-import { getCurrentWord } from "../helpers/functions";
+import { getCurrentWord, getSlice } from "../helpers/functions";
 import useGoTo from "../hooks/useGoTo";
 
-interface propsT {
-  font: string;
-}
-
-const SearchBar: React.FC<propsT> = function ({ font }) {
+const SearchBar = function () {
   const searchRef = useRef<HTMLInputElement>(null);
+  const { currentFont } = getSlice();
   const goto = useGoTo();
   const currentWord = getCurrentWord();
   const [invalid, setInvalid] = useState<boolean>(false);
-  console.log(invalid);
   const [inputValue, setInputValue] = useState<string>(currentWord);
 
   if (searchRef.current) searchRef.current.focus();
@@ -41,7 +37,7 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
     <div className={`search-container`}>
       <form onSubmit={handleSubmit}>
         <input
-          style={{ fontFamily: font }}
+          style={{ fontFamily: currentFont.cssValue }}
           ref={searchRef}
           onChange={handleChange}
           type="text"

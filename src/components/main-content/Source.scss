@@ -1,7 +1,6 @@
 @import "src/App";
 
 .source-container {
-  text-decoration: underline $light-back-color;
   margin: 3rem 0;
   @include flex-center;
   font-size: 1.8rem;
@@ -15,8 +14,10 @@
 
   & > a {
     transition: color 0.3s;
-    color: white;
-
+    color: $font-color;
+    .light & {
+      color: $light-font-color;
+    }
     &:hover {
       color: $primary-color;
     }
