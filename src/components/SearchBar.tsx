@@ -13,15 +13,19 @@ const SearchBar: React.FC<propsT> = function ({ font }) {
   const goto = useGoTo();
   const currentWord = getCurrentWord();
   const [invalid, setInvalid] = useState<boolean>(false);
+  console.log(invalid);
   const [inputValue, setInputValue] = useState<string>(currentWord);
 
   if (searchRef.current) searchRef.current.focus();
 
   const handleSubmit = function (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!searchRef.current) return setInvalid(true);
+
+    if (!searchRef.current) return;
 
     const { value } = searchRef.current;
+
+    if (!value) return setInvalid(true);
 
     goto(value);
   };

@@ -15,6 +15,11 @@
     font-weight: 700;
     color: $font-color;
 
+    &.light {
+      background-color: invert(darken($window-color, 4%));
+      color: invert($font-color);
+    }
+
     &:focus {
       background-color: $window-color;
       outline: none;
