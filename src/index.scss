@@ -30,6 +30,7 @@ Link {
 
   &:hover {
     filter: brightness(120%);
+    text-decoration: underline $primary-color;
 
     .light & {
       filter: brightness(120%);

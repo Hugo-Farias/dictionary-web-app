@@ -7,4 +7,8 @@
   //height: 3.2rem;
   //width: 0.1rem;
   //margin: 0 2.6rem;
+
+  .light & {
+    background-color: rgba($light-font-color, 60%);
+  }
 }
