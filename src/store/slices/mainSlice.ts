@@ -11,13 +11,11 @@ export interface actionT {
   payload: FontT;
 }
 
-// Load first font if local storage not found
-const loadedFont =
-  JSON.parse(localStorage.getItem("selectedFont")!) || fonts[0];
+const savedTheme = localStorage.getItem("nightMode");
 
 const initialState: stateT = {
-  currentFont: loadedFont,
-  nightMode: true,
+  currentFont: JSON.parse(localStorage.getItem("selectedFont")!) || fonts[0],
+  nightMode: savedTheme ? savedTheme === "true" : true,
 };
 
 const mainSlice = createSlice({
@@ -26,9 +24,11 @@ const mainSlice = createSlice({
   reducers: {
     changeFontTo: (state: stateT, { payload }: actionT) => {
       state.currentFont = payload;
+      localStorage.setItem("selectedFont", JSON.stringify(payload));
     },
     switchTheme: (state: stateT) => {
       state.nightMode = !state.nightMode;
+      localStorage.setItem("nightMode", state.nightMode + "");
     },
   },
 });

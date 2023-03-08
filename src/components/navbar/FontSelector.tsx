@@ -21,7 +21,6 @@ const FontSelector = function () {
   const handleOptionClick = (option: FontT) => {
     if (option.id === currentFont.id) return;
     setIsHidden(true);
-    localStorage.setItem("selectedFont", JSON.stringify(option));
     dispatch(changeFontTo(option));
   };
 
