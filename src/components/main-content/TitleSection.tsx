@@ -17,14 +17,14 @@ interface propsT {
 }
 
 const TitleSection: React.FC<propsT> = function (props) {
-  let { word, phonetic, phonetics } = props;
+  const { word, phonetic, phonetics } = props;
 
   let style: { fontSize: string } = { fontSize: "6.4rem" };
 
   // Give words with a lot of characters smaller font sizes dynamically
-  if (word.length >= 16) {
+  if (word.length >= 17) {
     style = {
-      fontSize: `${100 / word.length}rem`,
+      fontSize: `${110 / word.length}rem`,
     };
   }
 

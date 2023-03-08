@@ -40,8 +40,8 @@
 
     &:focus {
       background-color: $window-color;
-      //outline: none;
-      outline: 1px solid $primary-color;
+      outline: transparent;
+      //outline: 1px solid $primary-color;
     }
     &.invalid {
       animation: shake 0.3s 0s 1 forwards;

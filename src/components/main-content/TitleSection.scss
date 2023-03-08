@@ -2,6 +2,7 @@
 
 .title-container {
   @include flex-center;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   & .title {
@@ -14,6 +15,8 @@
   }
 
   & .pronounciation {
+    display: inline-block;
+    margin-bottom: 2rem;
     font-weight: 400;
     font-size: 2.4rem;
     line-height: 2.9rem;
@@ -21,7 +24,6 @@
   }
 
   & img {
-    flex-wrap: wrap;
     width: 7.5rem;
   }
 }
