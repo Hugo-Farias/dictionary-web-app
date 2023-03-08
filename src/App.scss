@@ -3,7 +3,7 @@ $font-color: #efefef;
 $window-color: #1f1f1f;
 $primary-color: #a445ed;
 $back-color: #757575;
-$app-margin: 2rem;
+$app-margin: 4rem;
 $font-names: lora, inter, inconsolata;
 
 $light-font-color: $color-back;
@@ -59,7 +59,7 @@ body {
 .app {
   margin: $app-margin auto;
   padding: 0 3rem;
-  max-width: 73.6rem;
+  max-width: 80rem;
   font-size: 3rem;
 
   & .light {
