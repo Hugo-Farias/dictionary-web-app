@@ -18,46 +18,48 @@
 .search-container {
   position: relative;
   margin: 5rem auto;
-  & .search-bar {
-    margin-bottom: 0.8rem;
-    padding: 3rem;
-    width: 100%;
-    height: 6.4rem;
-    border-radius: 1.6rem;
-    border: none;
-    background-color: darken($window-color, 4%);
-    font-size: 2rem;
-    font-weight: 700;
-    color: $font-color;
+  & form {
+    & .search-bar {
+      margin-bottom: 0.8rem;
+      padding: 3rem;
+      width: 100%;
+      height: 6.4rem;
+      border-radius: 1.6rem;
+      border: none;
+      background-color: darken($window-color, 4%);
+      font-size: 2rem;
+      font-weight: 700;
+      color: $font-color;
 
-    .light & {
-      background-color: lighten($light-color-back, 2%);
-      color: $light-font-color;
+      .light & {
+        background-color: lighten($light-color-back, 2%);
+        color: $light-font-color;
+        &:focus {
+          background-color: darken($light-color-back, 2%);
+        }
+      }
+
       &:focus {
-        background-color: darken($light-color-back, 2%);
+        background-color: $window-color;
+        outline: transparent;
+        //outline: 1px solid $primary-color;
+      }
+      &.invalid {
+        animation: shake 0.3s 0s 1 forwards;
+        outline: 1px solid #ff5252;
+
+        & + button {
+          animation: shake 0.3s 0s 1 forwards;
+        }
       }
     }
 
-    &:focus {
-      background-color: $window-color;
-      outline: transparent;
-      //outline: 1px solid $primary-color;
-    }
-    &.invalid {
-      animation: shake 0.3s 0s 1 forwards;
-      outline: 1px solid #ff5252;
-    }
-  }
-
-  & form {
     & button {
       background-color: transparent;
       border: none;
-      border-radius: 0 2rem 2rem 0;
+      border-radius: 0 1.6rem 1.6rem 0;
       cursor: pointer;
       position: absolute;
-      //top: 50%;
-      //transform: translateY(-70%);
       right: 0;
       background-size: 2rem 2rem;
       width: 10%;

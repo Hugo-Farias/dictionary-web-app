@@ -31,10 +31,10 @@ const SearchBar = function () {
     if (!value) return setInvalid("Whoops, can't be empty...");
 
     goto(value);
+    setInvalid(false);
   };
 
   const handleChange = function () {
-    setInvalid(false);
     if (!searchRef.current) return;
 
     const { value } = searchRef.current;
@@ -42,6 +42,7 @@ const SearchBar = function () {
     if (specialCharsCheck(value)) return setInvalid(invalidMsg);
 
     setInputValue(value);
+    setInvalid(false);
   };
 
   useEffect(() => setInputValue(currentWord), [currentWord]);
