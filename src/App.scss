@@ -51,6 +51,7 @@ $light-color-back: $font-color;
 }
 
 body {
+  transition: background-color 0.3s;
   background-color: $color-back;
   color: $font-color;
 }

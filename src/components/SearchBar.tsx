@@ -1,6 +1,6 @@
 import "./SearchBar.scss";
 import searchIcon from "../assets/images/icon-search.svg";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getCurrentWord, getSlice } from "../helpers/functions";
 import useGoTo from "../hooks/useGoTo";
 
@@ -26,7 +26,7 @@ const SearchBar = function () {
     goto(value);
   };
 
-  const handleChange = function (e: ChangeEvent<HTMLInputElement>) {
+  const handleChange = function () {
     setInvalid(false);
     if (searchRef.current) setInputValue(searchRef.current.value);
   };

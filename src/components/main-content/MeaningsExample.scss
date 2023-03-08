@@ -1,9 +1,10 @@
 @import "src/App";
 
 .example {
+  font-style: italic;
   margin-top: 1.3rem;
   color: rgba($font-color, 50%);
   .light & {
-    color: rgba($light-font-color, 50%);
+    color: rgba($light-font-color, 65%);
   }
 }
