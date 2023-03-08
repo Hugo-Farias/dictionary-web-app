@@ -2,7 +2,6 @@ import "./MeaningsNyms.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { formatForUrl } from "../../helpers/functions";
-import Separator from "../utilities/Separator";
 
 type propsT = {
   list: string[];

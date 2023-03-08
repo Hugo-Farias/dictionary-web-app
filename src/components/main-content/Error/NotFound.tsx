@@ -1,6 +1,6 @@
 import "./NotFound.scss";
 import React from "react";
-import { DictDataError, FontT } from "../../../helpers/typeDefinitions";
+import { DictDataError } from "../../../helpers/typeDefinitions";
 import { getCurrentWord, getSlice } from "../../../helpers/functions";
 
 interface propsT {

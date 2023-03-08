@@ -1,18 +1,17 @@
 import "./FontSelector.scss";
-import { FontT, selectT } from "../../helpers/typeDefinitions";
+import { FontT } from "../../helpers/typeDefinitions";
 import arrowDown from "../../assets/images/icon-arrow-down.svg";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeFontTo } from "../../store/slices/mainSlice";
 import fonts from "../../data/fonts.json";
+import { getSlice } from "../../helpers/functions";
 
 const FontSelector = function () {
-  const { currentFont } = useSelector<selectT>((s) => s.main) as {
-    currentFont: FontT;
-  };
+  const { currentFont } = getSlice();
+  const dispatch = useDispatch();
 
   const [isHidden, setIsHidden] = useState<boolean>(true);
-  const dispatch = useDispatch();
 
   const handleToggleClick = () => {
     setIsHidden(!isHidden);
