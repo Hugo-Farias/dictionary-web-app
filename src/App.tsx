@@ -5,19 +5,21 @@ import MainContent from "./components/MainContent";
 import NotFound from "./components/main-content/Error/NotFound";
 import { useEffect, useState } from "react";
 import { getSlice, getCurrentWord, getData } from "./helpers/functions";
-import { DictDataError } from "./helpers/typeDefinitions";
+import { DictDataError, DictionaryData } from "./helpers/typeDefinitions";
 import LightMode from "./components/navbar/theme-switch/LightMode";
 import { sliceT } from "./store/slices/mainSlice";
 
 const App = function () {
   const currentWord: string = getCurrentWord();
   const { currentFont, nightMode }: sliceT = getSlice();
-  const [apiData, setApiData] = useState<DictDataError | null>(null);
+  const [apiData, setApiData] = useState<DictionaryData[] | DictDataError>();
 
   useEffect(() => {
     getData(currentWord)
       .then((v) => {
         setApiData(v);
+        if (!v || v.title) return (document.title = `Dictionary | Home`);
+        document.title = `Dictionary | ${v[0].word}`;
       })
       .then(() => window.scrollTo(0, 0));
   }, [currentWord]);
