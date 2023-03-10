@@ -8,20 +8,26 @@ import { getSlice, getCurrentWord, getData } from "./helpers/functions";
 import { DictDataError, DictionaryData } from "./helpers/typeDefinitions";
 import LightMode from "./components/navbar/theme-switch/LightMode";
 import { sliceT } from "./store/slices/mainSlice";
+import Loading from "./components/Loading";
 
 const App = function () {
   const currentWord: string = getCurrentWord();
   const { currentFont, nightMode }: sliceT = getSlice();
+  const [loading, setLoading] = useState(false);
   const [apiData, setApiData] = useState<DictionaryData[] | DictDataError>();
 
   useEffect(() => {
+    setLoading(true);
     getData(currentWord)
       .then((v) => {
         setApiData(v);
         if (!v || v.title) return (document.title = `Dictionary | Home`);
         document.title = `Dictionary | ${v[0].word}`;
       })
-      .then(() => window.scrollTo(0, 0));
+      .then(() => {
+        window.scrollTo(0, 0);
+        setTimeout(() => setLoading(false), 100);
+      });
   }, [currentWord]);
 
   const font = currentFont?.cssValue;
@@ -39,7 +45,7 @@ const App = function () {
       <LightMode switch={nightMode} />
       <Navbar />
       <SearchBar />
-      {contentOrError}
+      {loading ? <Loading /> : contentOrError}
     </div>
   );
 };
