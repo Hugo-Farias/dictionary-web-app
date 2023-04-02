@@ -4,7 +4,7 @@
 
 [API: Dictionary API](https://dictionaryapi.dev/)
 
-<!-- ![Screenshot](https://github.com/Hugo-Farias/dictionary-web-app/settings/og-template.png) -->
+![Screenshot](https://repository-images.githubusercontent.com/609153398/05574225-f7d7-4009-b935-265c4dad32bc)
 
 Enlglish Dictionary WebApp that allows you to change font types and toggle between light and dark mode. Fundamental in helping me understand typescript type definitions/declarations, react-router and redux substantially better and making me more confortable using it.
 
